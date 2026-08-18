@@ -1,0 +1,13 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        # # Vertical flip then Transpose
+        # matrix.reverse()
+
+        for i in range(len(matrix)):
+            for j in range(i+1, len(matrix[0])):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+
+        # Or Transpose + horizontal flip
+        for row in matrix:
+            row.reverse()
